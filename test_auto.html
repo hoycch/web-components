@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+    <style>
+        body>ul {
+            background: grey;
+        }
+
+        body>ul>li {
+            background: red;
+            border:solid 3px black;
+            /* float: left; */
+        }
+
+        body>ul>li>ul {
+            background: orange;
+        }
+
+        body>ul>li>ul>li {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active">CURRENT DEALS</li>
+        <li>POPULAR>DESTINATIONS
+            <ul style="position: absolute; top:0;">
+                <li>Asia</li>
+                <li>Caribbean</li>
+                <li>Central America</li>
+                <li>Europe</li>
+            </ul>
+        </li>
+        <li>Favorite resort
+            <ul>
+                <li>Hotel Mariam</li>
+                <li>Atlantis</li>
+            </ul>
+        </li>
+        <li>AWESOME CRUISES</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+@media screen and (min-width:600px){
+    nav{
+        position: relative;
+    }
+    nav::after{     /* fix nav 0 height */
+        content: "";
+        display: table;
+        clear: both;
+    }
+    nav button{
+        display: none;
+    }
+
+    nav>ul {
+        margin-left: 2%;
+    }
+    nav>ul>li {
+        float:left;
+    }
+    nav>ul li a{
+        border: none;
+        border-right: 1px solid rgba(0,0,0,0.2);
+        padding: 0.7rem 0.9rem;
+        transition:background 0.3s linear;
+    }
+    nav ul>li>ul{
+        background-color: var(--menuColor);
+        position: absolute;
+        top: -999em;
+        z-index: 99;
+    }
+    nav ul>li:hover>ul{
+        top:auto;
+    }
+    nav ul>li>ul>li{
+        float:none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    nav>ul>li>a>span{display: none;}
+    nav>ul li a:hover{background-color:black;}
+}
