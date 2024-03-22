@@ -30,3 +30,4 @@ nav>button{
     border-radius: 10px;
     margin: 6px 0 6px 2%;
 }
+ul.closed{display: none;}

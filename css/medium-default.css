@@ -2,6 +2,9 @@
     nav{
         position: relative;
     }
+    nav ul.closed{
+        display: block;
+    }
     nav::after{     /* fix nav 0 height */
         content: "";
         display: table;
