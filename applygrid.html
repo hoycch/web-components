@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Jet Away Vacations: Deals</title>
+
+	<!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging whena phone is turned sideways-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/_others.css">
+
+	<!-- STYLE SHEETS -->
+	<!-- <link href="css/styles.css" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" href="css/_variables.css">
+	<style>
+		body {
+			font-size: 16px;
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-areas:
+				"myNavigation"
+				"myHeader"
+				"myContent"
+				"myFooter";
+		}
+
+		nav {
+			/* position: absolute; */
+			top: 0;
+			background-color: var(--menuColor);
+			width: 100%;
+			height: min-content;
+		}
+
+
+		nav ul {
+			padding: 0;
+		}
+
+		nav button {
+			font-size: 1.5rem;
+			color: white;
+			background-color: rgba(0, 0, 0, 0.2);
+			border: solid 1px rgba(0, 0, 0, 0.3);
+			width: 8rem;
+			margin: 0.2em;
+			border-radius: 5px;
+		}
+
+		nav>ul li a {
+			display: block;
+			color: white;
+			text-decoration: none;
+			width: 100%;
+			padding: 0.6rem 2%;
+			border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+		}
+
+		nav>ul>li>ul>li>a {
+			padding-left: 8%;
+		}
+
+		nav>ul {
+			overflow: hidden;
+		}
+
+		nav>ul.closed {
+			max-height: 0;
+		}
+
+		nav>ul.open {
+			max-height: 31rem;
+			transition: max-height .5s;
+		}
+
+		nav>ul>li.active>a {
+			background-color: black;
+		}
+
+
+
+
+		@media screen and (min-width:600px) {
+			body {
+				font-size: 16px;
+				display: grid;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"myHeader"
+					"myNavigation"
+					"myContent"
+					"myFooter";
+			}
+
+			nav {
+				/* position: relative; */
+				/* background-color: blue; */
+			}
+
+			nav::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			nav button {
+				display: none;
+			}
+
+			nav>ul {
+				margin-left: 2%;
+				border-left: 1px solid rgba(0, 0, 0, 0.2);
+			}
+
+			nav>ul.closed {
+				max-height: 31rem;
+			}
+
+			nav>ul>li {
+				float: left;
+			}
+
+			nav>ul>li>ul {
+				position: absolute;
+				z-index: 99;
+				top: -999em;
+				background-color: var(--menuColor);
+				width: 10em;
+				border: none;
+			}
+
+			nav>ul>li>ul>li {
+				padding-left: 0;
+			}
+
+			nav>ul li a {
+				border: none;
+				border-right: solid 1px rgba(0, 0, 0, 0.2);
+				background-color: var(--menuColor);
+				padding: 0.7em .9em;
+			}
+
+			ul li a:hover {
+				background-color: black;
+			}
+
+			nav>ul>li span {
+				display: none;
+			}
+
+			nav>ul>li:hover ul {
+				top: auto;
+			}
+		}
+
+		@media screen and (min-width:900px) {
+			nav {
+				ul li a span {
+					display: inline;
+				}
+			}
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<!-- HEADER STARTS HERE -->
+	<header style="grid-area: myHeader;">
+		<img src="images/logo.png" alt="">
+		<h1>Jet Away Vacations</h1>
+	</header>
+
+	<!-- NAV STARTS HERE -->
+	<nav style="grid-area: myNavigation">
+		<button onclick="toggleMenu()">MENU &#9776;</button>
+		<ul id="primaryNav" class="closed">
+			<li><a href="index.html"><span>CURRENT </span>DEALS</a></li>
+			<li class="active"><a href="#"><span>POPULAR </span>DESTINATIONS</a>
+				<ul>
+					<li><a href="index.html">Asia</a></li>
+					<li><a href="index.html">Caribbean</a></li>
+					<li><a href="index.html">Central America</a></li>
+					<li><a href="index.html">Europe</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><span>FAVORITE </span>RESORTS</a>
+				<ul>
+					<li><a href="index.html">Hotel Maroma</a></li>
+					<li><a href="index.html">Atlantis</a></li>
+				</ul>
+			</li>
+			<li><a href="index.html"><span>AWESOME </span>CRUISES</a></li>
+		</ul>
+
+	</nav>
+
+
+	<!-- MAIN STARTS HERE -->
+	<main style="grid-area: myContent;">
+		<h1>Current Deals</h1>
+		<div class="boxA">14 Night Mediterranean Cruize<span>Get closer to some of the world's most beautiful regions
+				aboard seemingly private yacht. Call us today to receive our exclusive $250 Shipboard Credit per
+				person.</span></div>
+		<figure class="w100"><img src="images/beach2.jpg" alt=""></figure>
+
+		<div class="boxB">7-night Corsica &amp; French Riviera Cruise <span>Reserve This Cruise By May 1 and Receive
+				$1,300 per Couple Air Credit.</span> </div>
+		<figure class="w100"><img src="images/beach1.jpg" alt=""></figure>
+
+	</main>
+
+	<!-- FOOTER STARTS HERE -->
+	<footer style="grid-area: myFooter;">
+		<p>Jet Away Vacations &bull; Template built for Pluralsight by Paul Cheney</p>
+	</footer>
+
+	<!-- PHONE MENU HIDER -->
+	<script>
+		function toggleMenu() {
+			var y = document.getElementById("primaryNav");
+			if (y.className === "closed")
+				y.className = "open";
+			else
+				y.className = "closed";
+		}
+
+	</script>
+</body>
+
+</html>
